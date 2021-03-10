@@ -1,0 +1,21 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Grade {
+    id: Int,
+    name: String!,
+    order: Int
+}
+
+type Query {
+  users: [User!]
+  user(id: ID!): User
+  grades: [Grade!]
+}
+
+type Mutation {
+  createUser(name: String!, email: String!): User
+}
