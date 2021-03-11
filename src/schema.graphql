@@ -1,21 +1,27 @@
 type User {
-  id: ID!
-  name: String!
-  email: String!
+    id: ID!
+    name: String!
+    email: String!
 }
 
 type Grade {
     id: Int,
-    name: String!,
+    name: String,
     order: Int
 }
 
+type Lecture {
+    id: ID!,
+    name: String!
+}
+
 type Query {
-  users: [User!]
-  user(id: ID!): User
-  grades: [Grade!]
+    users: [User!]
+    user(id: ID!): User
+    grades: [Grade!]
+    lectures(gradeId: ID!): [Lecture!]
 }
 
 type Mutation {
-  createUser(name: String!, email: String!): User
+    createUser(name: String!, email: String!): User
 }
